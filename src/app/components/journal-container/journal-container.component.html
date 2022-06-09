@@ -1,0 +1,59 @@
+<div class="journal"  *ngIf="hasData; else noData">
+    <div class="container w-100">
+        <!-- <div class="input-group mb-3 justify-content-center w-50">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+        </div> -->
+
+        <!-- <button 
+            type="button" 
+            class="btn btn-primary"
+            (click)="search(1, true)"
+        >
+            Search
+        </button> -->
+
+        <div class="w-50 mx-auto mt-4">
+            <input 
+                #InputVal
+                (keyup.enter)="onSearchSubmit(InputVal.value)"
+                type="text" 
+                class="form-control" 
+                placeholder="Search Bibliography... titles, authors, ISSNs and etc..." 
+                aria-label="Search Bibliography..." 
+                aria-describedby="basic-addon2"
+            >
+        </div>
+    </div>
+    <!-- class="item-container card-container col-9 mx-auto col-md-6 col-lg-3 my-3" -->
+    <div class="container mt-3">
+        <app-journal 
+            [works]="final"
+            class="item-container card-container mw-25"
+        >
+        </app-journal>
+    </div>
+
+
+
+    <div class="pagination justify-content-center mt-4">
+        <ngb-pagination
+            [(page)]="currentPage"
+            (pageChange)="pageChanged($event)"
+            [pageSize]="itemPerPage"
+            [maxSize]="maxPage"
+            [collectionSize]="rows"
+            aria-label="Default pagination"
+        >
+        </ngb-pagination>
+    </div>
+</div>
+
+
+<ng-template #noData>
+    <app-card-loading></app-card-loading>
+    <app-card-loading></app-card-loading>
+    <app-card-loading></app-card-loading>
+</ng-template>

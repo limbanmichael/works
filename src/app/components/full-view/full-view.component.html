@@ -1,0 +1,51 @@
+<div class="card shadow-sm w-50 mx-auto mt-4">
+    <div class="card-body pl-4">
+        <h5 class="card-title">{{works.title}}</h5>
+        <div class="card-text">
+
+            <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    Author : <mark>{{works.author}}</mark>
+                </li>
+                <span class="float-right badge badge-pill badge-primary">{{works.type}}</span>
+            </ul>
+
+            <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    <p class="mb-0">Publisher : {{works.publisher}}</p>
+                </li>
+                <span class="float-right text-truncate" style="max-width: '200px'"><a href="#" class="text-primary">{{works.URL}}</a></span>
+            </ul>
+            <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    <p class="mb-0">Created : {{works.created}}</p>
+                </li>
+            </ul>
+
+        </div>
+        <p className="card-text">{{works.DOI}}</p>
+    </div>
+    <div className="card-footer">
+        <div class="rating-container pl-4">
+            <ngb-rating 
+            [readonly]="true"
+            [(rate)]="works.score"
+            >
+            </ngb-rating>
+        </div>
+        <hr>
+        <pre class="pl-4 list-inline-item">Rate: <b>{{works.score}}</b></pre>
+        <pre class="pl-4 list-inline-item">Referrence Count: <b>{{works.referenceCount}}</b></pre>
+    </div>
+
+</div>
+
+<div class="w-50 mx-auto mt-4">
+    <button 
+        type="button" 
+        class="btn btn-primary"
+        (click)="back()"
+    >
+    Back
+    </button>
+</div>
