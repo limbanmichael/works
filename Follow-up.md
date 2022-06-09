@@ -2,8 +2,8 @@
 
 1. What libraries did you use? Why did you use them?
 
-###Answer : 
- * @ng-bootstrap/ng-bootstrap : I use this package as it has a lot of components including pagination, and another reason is with this package i have an access to bootstrap classes, which can make my work easy and clean.
+```Answer : 
+ * @ng-bootstrap/ng-bootstrap : I use this package as it has a lot of components including pagination, and another reason is with this package i have an access to bootstrap classes, which can make my work easy and clean.```
 
 2. If you had more time, what further improvements or new features would you add?
 ###Answer : 
